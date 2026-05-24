@@ -41,11 +41,13 @@ void	selectGPU(t_window *win) {
 	VkPhysicalDeviceProperties props;
 	win->physicalDevice = physicalDevice;
 	
+	
+	// Sert juste a voir le GPU selectionne :
 	/*
-	 * Sert juste a voir le GPU selectionne :
-	vkGetPhysicalDeviceProperties(physicalDevice, &props);
-	std::cout << "GPU SELECTIONNE : " << props.deviceName << std::endl;
+	{
+		vkGetPhysicalDeviceProperties(physicalDevice, &props);
+		std::cout << "GPU SELECTIONNE : " << props.deviceName << std::endl;
+	}
 	*/
-
 }
 
