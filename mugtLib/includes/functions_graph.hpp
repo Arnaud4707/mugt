@@ -3,8 +3,10 @@
 
 #include "includes_graph.hpp"
 
-//t_window	*init_window(int x, int y, int width, int height, char *WindowName);
+void	initWindow(t_window *win);
+void	destroyWindow(t_window *win);
 
+uint8_t	isDeviceSuitable(VkPhysicalDevice device);
 
-//VkInstance *init_instance();
+void	selectGPU(t_window *win);
 

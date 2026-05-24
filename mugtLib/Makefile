@@ -31,7 +31,9 @@ RM = rm -rf
 DEP_FLAGS := -MMD -MP
 SHELL := bash
 
-BASE_SRC =	init_vulkan.cpp \
+BASE_SRC =	init_vulkan.cpp destroy_vulkan.cpp gpu.cpp
+
+
 
 VALGRIND = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes --trace-children=yes
 SUPPRESSION = --suppressions=suppressions.supp
@@ -116,6 +118,8 @@ $(NAME) : $(OBJ)
 	@$(AR) $(NAME) $(OBJ)
 	@printf $(BANNER)
 
+test: all
+	@c++ srcs/main.cpp -lvulkan -lX11 -lglfw -Iincludes -I/usr/include/vulkan MugtGraphicsLib.a -o test
 
 # Debug
 debug: CXXFLAGS += -g3 -D DEBUG_MODE
@@ -162,6 +166,7 @@ fclean : clean
 	@printf "$(RED)Deleting executable...\n$(CLEAR_COLOR)"
 	@$(RM) $(NAME)
 	@printf "$(RED)Done !\n$(CLEAR_COLOR)"
+	@rm test
 
 re : fclean all
 
