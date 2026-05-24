@@ -161,12 +161,12 @@ clean :
 	@printf "$(RED)Deleting objects...\n$(CLEAR_COLOR)"
 	@$(RM) $(OBJ_DIR)
 	@printf "$(RED)Done !\n$(CLEAR_COLOR)"
+	@rm test
 
 fclean : clean
 	@printf "$(RED)Deleting executable...\n$(CLEAR_COLOR)"
 	@$(RM) $(NAME)
 	@printf "$(RED)Done !\n$(CLEAR_COLOR)"
-	@rm test
 
 re : fclean all
 

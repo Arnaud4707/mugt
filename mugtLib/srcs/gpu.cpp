@@ -15,8 +15,6 @@ inline void enumPhysicalDevices(VkInstance &instance, uint32_t &deviceCount) {
 	vkEnumeratePhysicalDevices(instance, &deviceCount, nullptr);
 }
 
-
-
 void	selectGPU(t_window *win) {
 	VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
 	uint32_t device_cpt = 0;
@@ -43,11 +41,11 @@ void	selectGPU(t_window *win) {
 	
 	
 	// Sert juste a voir le GPU selectionne :
-	/*
+	
 	{
 		vkGetPhysicalDeviceProperties(physicalDevice, &props);
 		std::cout << "GPU SELECTIONNE : " << props.deviceName << std::endl;
 	}
-	*/
+	
 }
 
