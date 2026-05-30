@@ -11,7 +11,7 @@ uint8_t	isDeviceSuitable(VkPhysicalDevice device)
 	return (deviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU);
 }
 
-inline void enumPhysicalDevices(VkInstance &instance, uint32_t &deviceCount) {
+static inline void enumPhysicalDevices(VkInstance &instance, uint32_t &deviceCount) {
 	vkEnumeratePhysicalDevices(instance, &deviceCount, nullptr);
 }
 

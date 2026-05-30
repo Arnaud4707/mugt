@@ -1,7 +1,7 @@
 
 #include "includes_graph.hpp"
 
-VkInstance createInstance(t_window *win)
+static VkInstance createInstance(t_window *win)
 {
 	VkApplicationInfo appInfo{};
 	appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
@@ -29,7 +29,7 @@ VkInstance createInstance(t_window *win)
 	return (instance);
 }
 
-void	initVulkanSurface(t_window *win)
+static void	initVulkanSurface(t_window *win)
 {
 	win->instance = createInstance(win);
 	VkSurfaceKHR surface;
